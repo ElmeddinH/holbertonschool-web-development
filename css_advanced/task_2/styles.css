@@ -1,0 +1,129 @@
+/* ===== UNIVERSAL ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 65px;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+header a:first-child img {
+  width: 160px;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  gap: 41px;
+}
+
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ===== BANNER ===== */
+main > section:first-child {
+  background-color: #071629;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > section:first-child > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 273px 0 130px;
+}
+
+main > section:first-child > div:first-child h1 {
+  font-size: 120px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+main > section:first-child > div:first-child p {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin: 0 0 40px;
+}
+
+main > section:first-child > div:first-child button {
+  background-color: #C271FF;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  padding: 13px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main > section:first-child > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 80px;
+  width: 100%;
+}
+
+main > section:first-child > div:last-child h2 {
+  color: #C271FF;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+main > section:first-child > div:last-child > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 70px;
+}
+
+main > section:first-child > div:last-child > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > section:first-child > div:last-child > div > div img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #C271FF;
+}
+
+main > section:first-child > div:last-child > div > div h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 15px;
+}
+
+main > section:first-child > div:last-child > div > div p {
+  font-size: 12px;
+  color: #C271FF;
+  font-style: italic;
+}

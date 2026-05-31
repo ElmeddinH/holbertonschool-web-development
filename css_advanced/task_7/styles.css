@@ -1,4 +1,4 @@
-/* ===== UNIVERSAL ===== */
+/* ===== GLOBAL RESET ===== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,14 +11,16 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 65px;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 10%;
 }
 
 header a:first-child img {
@@ -28,6 +30,7 @@ header a:first-child img {
 header nav {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 41px;
 }
 
@@ -36,11 +39,13 @@ header nav a {
   text-decoration: none;
   font-weight: 700;
   font-size: 12px;
+  text-transform: uppercase;
 }
 
-/* ===== BANNER ===== */
+/* ===== BANNER / HERO ===== */
 main > section:first-child {
-  background-color: #071629;
+  position: relative;
+  background: #071629 radial-gradient(closest-corner at 48% 90%, #90d4c5, #071629) no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,13 +55,15 @@ main > section:first-child > div:first-child {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 273px 0 130px;
+  padding: 273px 0 200px;
 }
 
 main > section:first-child > div:first-child h1 {
   font-size: 120px;
   font-weight: 700;
   color: #ffffff;
+  line-height: 1;
+  text-align: center;
 }
 
 main > section:first-child > div:first-child p {
@@ -64,7 +71,9 @@ main > section:first-child > div:first-child p {
   font-weight: 700;
   letter-spacing: 4px;
   color: #ffffff;
-  margin: 0 0 40px;
+  margin: 40px 0;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 main > section:first-child > div:first-child button {
@@ -76,13 +85,15 @@ main > section:first-child > div:first-child button {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+  font-family: inherit;
 }
 
+/* ===== INSTRUCTORS (Learn from the pros) ===== */
 main > section:first-child > div:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0 80px;
+  padding: 0 0 110px;
   width: 100%;
 }
 
@@ -92,6 +103,7 @@ main > section:first-child > div:last-child h2 {
   font-weight: 600;
   font-style: italic;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 main > section:first-child > div:last-child > div {
@@ -105,6 +117,7 @@ main > section:first-child > div:last-child > div > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0;
 }
 
 main > section:first-child > div:last-child > div > div img {
@@ -119,26 +132,29 @@ main > section:first-child > div:last-child > div > div h3 {
   font-size: 14px;
   font-weight: 700;
   color: #ffffff;
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 main > section:first-child > div:last-child > div > div p {
   font-size: 12px;
   color: #C271FF;
   font-style: italic;
+  text-align: center;
 }
 
 /* ===== QUOTE SECTION ===== */
 main > section:nth-child(2) {
   background-color: #C271FF;
-  padding: 110px 65px;
+  padding: 110px 10%;
 }
 
 main > section:nth-child(2) > div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -156,7 +172,7 @@ main > section:nth-child(2) blockquote {
   font-style: italic;
   font-weight: 400;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   quotes: none;
 }
 
@@ -170,11 +186,12 @@ main > section:nth-child(2) cite {
   font-style: normal;
   color: #ffffff;
   display: block;
+  margin-bottom: 5px;
 }
 
-/* ===== VIDEOS SECTION ===== */
+/* ===== VIDEOS / POPULAR SECTION ===== */
 main > section:nth-child(3) {
-  padding: 80px 65px;
+  padding: 80px 10%;
   text-align: center;
 }
 
@@ -248,6 +265,7 @@ main > section:nth-child(3) > div > div > div:last-of-type > div {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 2px;
 }
 
 main > section:nth-child(3) > div > div > div:last-of-type > div img {
@@ -264,7 +282,7 @@ main > section:nth-child(3) > div > div > div:last-of-type span {
 /* ===== MEMBERSHIP SECTION ===== */
 main > section:nth-child(4) {
   background-color: #071629;
-  padding: 80px 65px;
+  padding: 80px 10%;
   text-align: center;
 }
 
@@ -292,14 +310,15 @@ main > section:nth-child(4) > div > div {
 
 main > section:nth-child(4) > div > div img {
   width: 46px;
-  margin-bottom: 15px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 main > section:nth-child(4) > div > div h2 {
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 main > section:nth-child(4) > div > div p {
@@ -316,11 +335,12 @@ main > section:nth-child(4) button {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+  font-family: inherit;
 }
 
 /* ===== FAQ SECTION ===== */
 main > section:nth-child(5) {
-  padding: 80px 65px;
+  padding: 80px 10%;
   text-align: center;
 }
 
@@ -337,32 +357,30 @@ main > section:nth-child(5) > div {
   justify-content: center;
   gap: 40px;
   text-align: left;
-  margin-bottom: 30px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 40px;
 }
 
 main > section:nth-child(5) > div > div {
-  width: 45%;
+  width: 40%;
 }
 
 main > section:nth-child(5) > div > div h3 {
   font-size: 16px;
   font-weight: 700;
   color: #071629;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 main > section:nth-child(5) > div > div p {
   font-size: 14px;
   color: #071629;
+  line-height: 1.5;
 }
 
 /* ===== FOOTER ===== */
 footer {
   background-color: #071629;
-  padding: 35px 65px;
+  padding: 35px 10%;
 }
 
 footer > div {
@@ -377,10 +395,15 @@ footer > div a:first-child img {
   width: 160px;
 }
 
+footer > div > p {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 footer > div > p a {
   color: #ffffff;
   text-decoration: none;
-  margin-left: 20px;
   font-size: 20px;
 }
 

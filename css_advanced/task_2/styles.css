@@ -1,6 +1,8 @@
 /* =========================================
-   VARIABLES & BASE RULES
+   VARIABLES & FONTS
    ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&family=Coiny&display=swap');
+
 :root {
   --color-primary: #C271FF;
   --color-white: #FFFFFF;
@@ -11,163 +13,162 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: var(--font-family-base);
   color: var(--color-white);
 }
 
 /* =========================================
-   HEADER & NAVIGATION
+   HEADER
    ========================================= */
 header {
-  position: absolute; /* Şəklin üstündə şəffaf görünməsi üçün */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
-  padding: 30px 0;
-}
-
-header > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Figma ölçülərinə uyğun konteyner */
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 30px 8%;
 }
 
-/* Naviqasiya linkləri */
+.logo img {
+  width: 150px; /* Logonun standart ölçüsü */
+}
+
+.navbar-menu,
 .nav {
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
   gap: 40px;
 }
 
-.nav-link {
+.nav-link,
+header a {
   color: var(--color-white);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
-  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+header a:hover {
   color: var(--color-primary);
 }
 
 /* =========================================
-   HERO / BANNER SECTION
+   HERO / BANNER
    ========================================= */
+main {
+  text-align: center;
+}
+
+/* Əgər HTML-də class section-hero-dursa */
+.section-hero,
 .hero {
-  /* Arxa fon şəkli və radial gradient overlay */
+  position: relative;
   background-image: url('images/pic-1.jpg');
-  background-color: var(--color-black); /* Şəkil yüklənməyəndə ehtiyat */
   background-size: cover;
   background-position: center;
-  position: relative;
-  text-align: center;
   padding-top: 180px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-/* Radial Gradient Overlay */
+/* Radial Gradient */
+.section-hero::before,
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
   z-index: 1;
 }
 
-/* Overlay-in altinda qalmamaq üçün */
-.hero > div {
+.section-hero > *,
+.hero > * {
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
+.section-hero h1,
 .hero h1 {
-  font-size: 120px;
-  font-weight: bold;
-  margin: 0;
-  line-height: 1.1;
+  font-size: 110px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1;
 }
 
-/* 3 açar söz: SMILES, GRIN, LAUGH */
-.hero ul:not(.nav) {
+.section-hero ul,
+.hero ul {
   display: flex;
   list-style: none;
-  padding: 0;
-  margin: 20px 0 40px 0;
-  gap: 60px;
+  gap: 50px;
+  margin-bottom: 40px;
+  font-weight: 700;
   font-size: 16px;
-  font-weight: bold;
+  text-transform: uppercase;
 }
 
-/* Bənövşəyi düymə */
+/* Button */
+.btn,
+button,
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
   padding: 15px 35px;
-  border-radius: 40px;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-/* Learn from the pros altbaşlığı */
+.section-title,
 .hero h2 {
   font-size: 32px;
-  margin-top: 80px;
   font-weight: 400;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 
-.hero h2 .text-primary {
+.section-title span,
+.text-primary {
   color: var(--color-primary);
 }
 
 /* =========================================
-   PROFILES SECTION (4 Circular Images)
+   PROFILES
    ========================================= */
+.row,
 .pros-container {
   display: flex;
   justify-content: center;
-  gap: 50px;
-  margin-top: 40px;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
+.profile,
 .pro-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.profile img,
 .pro-card img {
   width: 150px;
   height: 150px;
@@ -176,14 +177,16 @@ header > div {
   margin-bottom: 15px;
 }
 
+.profile h3,
 .pro-card h3 {
-  margin: 0;
-  font-weight: bold;
   font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
+.profile p,
 .pro-card p {
-  margin: 5px 0 0;
-  font-style: italic;
   font-size: 14px;
+  font-style: italic;
+  opacity: 0.8;
 }

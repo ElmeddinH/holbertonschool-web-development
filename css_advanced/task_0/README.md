@@ -1,15 +1,5 @@
 # CSS, Advanced - Smiling School
 
-This project implements CSS styling for the Smiling School webpage, translating a professional Figma design into clean, standards-compliant CSS code. Building on the HTML Advanced project, we use CSS selectors, the box model, Flexbox layout, and color theory to create a pixel-perfect implementation of a modern educational website featuring sections for hero content, instructor profiles, video tutorials, membership benefits, FAQs, and footer navigation.
+This project applies CSS styling to the Smiling School webpage, translating a professional Figma design into clean, W3C-compliant CSS. Building on the HTML Advanced project, it uses CSS custom properties, Flexbox layout, and the box model to create a pixel-perfect educational platform with a hero section, instructor profiles, video tutorials, membership benefits, FAQ, and footer.
 
-![Smiling School CSS Preview](https://holbertonschool.com/holberton-logo.png)
-
-## Features
-
-- Responsive header with transparent navigation
-- Dark hero section with purple accents (#C271FF)
-- Circular instructor profile images
-- Video tutorial cards with star ratings
-- Membership benefits section
-- FAQ two-column layout
-- Styled footer with social links
+![Smiling School logo](images/logo.png)

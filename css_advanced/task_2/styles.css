@@ -1,81 +1,189 @@
+/* =========================================
+   VARIABLES & BASE RULES
+   ========================================= */
 :root {
-  --purple: #C271FF;
-  --black: #071629;
-  --white: #ffffff;
-  --dark: rgba(7, 22, 41, 0.5);
+  --color-primary: #C271FF;
+  --color-white: #FFFFFF;
+  --color-black: #090909;
+  --font-family-base: 'Source Sans Pro', sans-serif;
+  --font-family-title: 'Coiny', cursive;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: sans-serif; }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  color: var(--color-white);
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+   ========================================= */
 header {
+  position: absolute; /* Şəklin üstündə şəffaf görünməsi üçün */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 30px 0;
+}
+
+header > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  padding: 28px 65px;
-  z-index: 10;
-  color: var(--white);
+  max-width: 1200px; /* Figma ölçülərinə uyğun konteyner */
+  margin: 0 auto;
+  padding: 0 20px;
 }
-header > a img { height: 30px; }
-header nav { display: flex; gap: 41px; }
-header nav a {
-  color: var(--white);
+
+/* Naviqasiya linkləri */
+.nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+}
+
+.nav-link {
+  color: var(--color-white);
   text-decoration: none;
   font-weight: bold;
-  font-size: 12px;
-  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
-main > section:first-of-type {
-  background-color: var(--black);
-  color: var(--white);
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   HERO / BANNER SECTION
+   ========================================= */
+.hero {
+  /* Arxa fon şəkli və radial gradient overlay */
+  background-image: url('images/pic-1.jpg');
+  background-color: var(--color-black); /* Şəkil yüklənməyəndə ehtiyat */
+  background-size: cover;
+  background-position: center;
+  position: relative;
   text-align: center;
-  padding: 230px 65px 100px;
+  padding-top: 180px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-main > section:first-of-type h1 {
+
+/* Radial Gradient Overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 1;
+}
+
+/* Overlay-in altinda qalmamaq üçün */
+.hero > div {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero h1 {
   font-size: 120px;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 30px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.1;
 }
-main > section:first-of-type > div:first-child > p {
+
+/* 3 açar söz: SMILES, GRIN, LAUGH */
+.hero ul:not(.nav) {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 40px 0;
+  gap: 60px;
   font-size: 16px;
   font-weight: bold;
-  letter-spacing: 8px;
-  margin-bottom: 40px;
 }
-main > section:first-of-type > div:first-child button {
-  background-color: var(--purple);
-  color: var(--white);
-  border: none;
-  border-radius: 22px;
-  width: 162px;
-  height: 44px;
-  font-size: 14px;
+
+/* Bənövşəyi düymə */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 15px 35px;
+  border-radius: 40px;
+  text-decoration: none;
   font-weight: bold;
+  font-size: 14px;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-transform: uppercase;
 }
-main > section:first-of-type > div:last-child { margin-top: 100px; }
-main > section:first-of-type > div:last-child h2 {
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Learn from the pros altbaşlığı */
+.hero h2 {
   font-size: 32px;
-  font-weight: 300;
-  margin-bottom: 50px;
+  margin-top: 80px;
+  font-weight: 400;
 }
-main > section:first-of-type > div:last-child > div {
+
+.hero h2 .text-primary {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   PROFILES SECTION (4 Circular Images)
+   ========================================= */
+.pros-container {
   display: flex;
   justify-content: center;
-  gap: 70px;
+  gap: 50px;
+  margin-top: 40px;
+  flex-wrap: wrap;
 }
-main > section:first-of-type > div:last-child > div > div { text-align: center; }
-main > section:first-of-type > div:last-child > div > div img {
-  width: 150px; height: 150px;
-  border-radius: 50%; object-fit: cover;
-  display: block; margin: 0 auto 10px;
+
+.pro-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-main > section:first-of-type > div:last-child > div > div h3 {
-  font-size: 18px; font-weight: 900; margin-bottom: 5px;
+
+.pro-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
-main > section:first-of-type > div:last-child > div > div p {
-  font-size: 14px; font-style: italic;
+
+.pro-card h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.pro-card p {
+  margin: 5px 0 0;
+  font-style: italic;
+  font-size: 14px;
 }

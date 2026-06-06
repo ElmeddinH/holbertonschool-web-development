@@ -1,192 +1,165 @@
-/* =========================================
-   VARIABLES & FONTS
-   ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&family=Coiny&display=swap');
-
 :root {
-  --color-primary: #C271FF;
-  --color-white: #FFFFFF;
-  --color-black: #090909;
-  --font-family-base: 'Source Sans Pro', sans-serif;
-  --font-family-title: 'Coiny', cursive;
+    --purple: #C271FF;
+    --white: #FFFFFF;
+    --black: #071629;
+    --transparent-black: rgba(7, 22, 41, 0.50);
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: var(--font-family-base);
-  color: var(--color-white);
+    background-color: var(--white);
+    width: 1440px;
+    margin: 0;
+    padding: 0;
+}
+* {
+    font-family: sans-serif;
+    margin: 0;
+}
+section h1 {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 40px;
+}
+.purple-text {
+    color: var(--purple);
+    font-weight: bold;
+}
+.round-image {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
 }
 
-/* =========================================
-   HEADER
-   ========================================= */
+/* Header */
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 8%;
+    width: inherit;
+    position: absolute;
+    top: 35px;
+    color: var(--white);
+    z-index: 2;
 }
-
-.logo img {
-  width: 150px; /* Logonun standart ölçüsü */
+#header-div {
+    width: 1103.41px;
+    height: 29.46px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
-
-.navbar-menu,
-.nav {
-  display: flex;
-  list-style: none;
-  gap: 40px;
+#header-links {
+    width: 234px;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
-
-.nav-link,
 header a {
-  color: var(--color-white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    color: var(--white);
 }
-
-.nav-link:hover,
-header a:hover {
-  color: var(--color-primary);
+/* Banner */
+#banner-section {
+    color: var(--white);
+    text-align: center;
+    background-color: var(--black);
+    position: relative;
+    overflow: hidden;
 }
-
-/* =========================================
-   HERO / BANNER
-   ========================================= */
-main {
-  text-align: center;
+#banner-section * {
+    margin: 0;
 }
-
-/* Əgər HTML-də class section-hero-dursa */
-.section-hero,
-.hero {
-  position: relative;
-  background-image: url('images/pic-1.jpg');
-  background-size: cover;
-  background-position: center;
-  padding-top: 180px;
-  padding-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+#banner-section > * {
+    z-index: 1;
+    position: relative;
 }
-
-/* Radial Gradient */
-.section-hero::before,
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
-  z-index: 1;
+#banner-section h1 {
+    font-size: 120px;
+    line-height: 150px;
+    font-weight: 700;
+    padding-top: 220px;
 }
-
-.section-hero > *,
-.hero > * {
-  position: relative;
-  z-index: 2;
+#banner-bg {
+    filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-
-.section-hero h1,
-.hero h1 {
-  font-size: 110px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1;
+#gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 989px;
+    width: 1440px;
+    background: linear-gradient(to bottom, transparent 1%, var(--black) 100%);
 }
-
-.section-hero ul,
-.hero ul {
-  display: flex;
-  list-style: none;
-  gap: 50px;
-  margin-bottom: 40px;
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
+#banner-text {
+    width: 253px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
 }
-
-/* Button */
-.btn,
-button,
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: 15px 35px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  display: inline-block;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+#banner-button {
+    margin-top: 38px;
+    box-shadow: 0px 0px 20px 0px #000000;
 }
-
-.section-title,
-.hero h2 {
-  font-size: 32px;
-  font-weight: 400;
-  margin-top: 80px;
-  margin-bottom: 40px;
+.register-button {
+    color: var(--white);
+    background-color: var(--purple);
+    width: 162px;
+    height: 44px;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
 }
-
-.section-title span,
-.text-primary {
-  color: var(--color-primary);
+#banner-section h2 {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 40px;
+    color: var(--white);
 }
-
-/* =========================================
-   PROFILES
-   ========================================= */
-.row,
-.pros-container {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
+/* Pros */
+#pros-section {
+    height: 364px;
+    margin-top: 168px;
+    padding-bottom: 98px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
-
-.profile,
-.pro-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#pros-section h2 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 40px;
 }
-
-.profile img,
-.pro-card img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
+#pros-quotes {
+    display: flex;
+    justify-content: space-between;
+    width: 1009px;
+    height: 247px;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
 }
-
-.profile h3,
-.pro-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
+.pro {
+    font-style: normal;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 900;
+    margin-top: 2px;
 }
-
-.profile p,
-.pro-card p {
-  font-size: 14px;
-  font-style: italic;
-  opacity: 0.8;
+.pro-quote {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 1px;
 }
